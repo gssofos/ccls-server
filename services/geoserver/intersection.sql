@@ -1,0 +1,1 @@
+SELECT ST_Intersection(t.geom, t2.geom) from (SELECT st_union(poly_geometry) as geom from sql.ls_process where fk_operator=1) as t,  (SELECT st_union(poly_geometry) as geom from sql.ls_process where fk_operator=2) as t2

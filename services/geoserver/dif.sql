@@ -1,0 +1,1 @@
+SELECT ST_Difference(t1.geom,t2.geom) FROM (SELECT ST_Union(poly_geometry) as geom from sql.ls_process) as t1, (SELECT ST_ConcaveHull(ST_Union(poly_geometry), 0.99,true) As geom FROM sql.ls_process) as t2
